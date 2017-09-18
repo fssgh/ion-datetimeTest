@@ -1,3 +1,49 @@
 page-home {
-
+    ion-grid{
+        background-color: #fff;
+    }
+    .datebar.toolbar{
+        padding:0;
+        border-top:solid 1px #dedede;
+        border-bottom:solid 1px #dedede;
+        min-height: 32px !important;
+        ion-col{
+            padding:0 6px 0 0;
+        }
+        .switchbar{
+            button[icon-only]{
+                height: 32px;
+                width:32px;
+                font-size: 18px;
+            }
+            button[inpbtn]{
+                height: 32px;
+                padding:8px;
+                margin: 0;
+                box-shadow: none;
+                ion-datetime{
+                    padding:0;
+                }
+            }
+        }
+        .segment-ios .segment-button{
+            margin: 5px 0;
+            height: 32px;
+            line-height: 30px;
+        }
+    }
+    .dataitem{
+        ion-icon{
+            font-size: 20px;
+            padding:5px;
+        }
+        p{
+            margin: 0 0 3px 0;
+        }
+    }
+    .echart{
+        width:100%;
+        height: 280px;
+        margin:8px 0;
+    }
 }

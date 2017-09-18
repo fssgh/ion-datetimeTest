@@ -5,13 +5,34 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    Click the Years,Month,Day button to change the ion-datetime displayFormat;
   </p>
   <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    Click prev or next button to change the ion-datetime value;
   </p>
+  <ion-toolbar class="datebar" color="bright">
+    <ion-row>
+      <ion-col class="switchbar" col-auto>
+        <button ion-button icon-only clear color="secondary" (click)="prevYMD()"><ion-icon name="arrow-dropleft-circle"></ion-icon></button>
+        <button ion-button inpbtn round color="light"><ion-datetime #date displayFormat="YYYY-MM-DD" [(ngModel)]="myDate"></ion-datetime></button>
+        <button ion-button icon-only clear color="secondary" (click)="nextYMD()"><ion-icon name="arrow-dropright-circle"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <div padding-left>
+          <ion-segment [(ngModel)]="YMDSwitch" mode="ios" color="secondary">
+            <ion-segment-button value="Y" (ionSelect)="YMDChange('Y')">
+              Years              
+            </ion-segment-button>
+            <ion-segment-button value="M" (ionSelect)="YMDChange('M')">
+              Month              
+            </ion-segment-button>
+            <ion-segment-button value="D" (ionSelect)="YMDChange('D')">
+              Day
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-content>
